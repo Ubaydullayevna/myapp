@@ -1,8 +1,17 @@
+import Link from "next/link";
 import React from "react";
+// async function getData (id) {
+//   const req = await fetch('http://localhost:4000/data/' + id)
+//   const data = await req.json()
+//   return data
+// }
 
-function SingleInvoice({params}) {
+ async function SingleInvoice({params}) {
+  // const SingleData = await getData(params.id)
+  // console.log(SingleData);
   return(
-    <div className="max-w-4xl mx-auto">
+    <div className="max-w-4xl mx-auto"> 
+      <Link className="text-sm breadcrumbs" href='/'>Go back  </Link>
        <div className=" mt-6 bg-neutral-900 p-3 rounded"> 
    <div className="flex justify-between  gap-4 ">
    <div className="flex gap-3 items-center">
@@ -20,7 +29,7 @@ function SingleInvoice({params}) {
   <div>
     <div className="flex justify-between items-center pt-3">
      <span>
-     <h4>{params.id}</h4>
+     <h4 className="text-xl font-bold text-gray-50">#{params.id}</h4>
      <p>{params.description}Graphic Design</p>
      </span>     <span>
      <p>{params.country} United kingdom </p>
