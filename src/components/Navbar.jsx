@@ -1,4 +1,4 @@
-import React from "react";
+import React from "reactA";
 
 function Navbar() {
   return <div className="max-w-4xl mx-auto  mt-10 navbar bg-base-100">
@@ -9,13 +9,39 @@ function Navbar() {
     <p>There are 7 total invoices</p></div>
   </div>
  <div className="flex justify-between gap-5">
-  <div>
-  <select className="select select-info w-full max-w-xs">
-  <option disabled selected>Filter by status</option>
-  <option>Paid</option>
-  <option>Pending</option>
-  <option>Draft</option>
-</select>
+  <div className="dropdown">
+    
+  <div tabIndex={0} className="m-1 font-bold " role="button">
+    Filtered by Status
+  </div>
+    
+  <ul tabIndex={0} className="dropdown-content z-[1] menu p-shadow bg-base-100 rounded-box  w-52  ">
+    <li>
+      <label className="label cursor-pointer flex justify-start"   >
+        <input type="checkbox"
+         name="checked"
+         className="checkbox checkbox-primary" />
+         <span>Draft</span>
+      </label>
+    </li>
+    <li>
+      <label className="label cursor-pointer flex justify-start"  >
+        <input type="checkbox"
+         name="checked"
+         className="checkbox checkbox-primary" />
+         <span>Pending </span>
+      </label>
+    </li>
+    <li>
+      <label className="label cursor-pointer flex justify-start" >
+        <input type="checkbox"
+         name="checked"
+         className="checkbox checkbox-primary" />
+         <span>Paid </span>
+      </label>
+    </li>
+  </ul>
+  
   </div>
   <div>
     <button className="btn btn-accent after:first:">
